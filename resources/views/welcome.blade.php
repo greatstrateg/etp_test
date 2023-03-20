@@ -9,22 +9,11 @@
     </head>
     <body>
     <div class="full">
-        <div class="content">
-            <header>
-                <h2>Гарантийные обязательства на доставку грузов</h2>
-            </header>
-            <main>
-                <div class="p-1">
-                    <div id="app"></div>
-                </div>
-            </main>
-        </div>
+        <div class="content" id="app"></div>
         <footer>
             <div>ЕТП © {!! date("Y") !!}</div>
         </footer>
     </div>
-
-    <div id="app"></div>
     @vite(['resources/js/app.js'])
     </body>
 </html>

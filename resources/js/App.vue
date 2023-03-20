@@ -1,19 +1,31 @@
 <template>
-    <listGoodsComponent v-bind:arrGoods='arrGoods' />
-    <sumComponent v-bind:arrGoods='arrGoods' />
-    <xmlGoodsComponent v-bind:arrGoods='arrGoods'/>
+    <header>
+        <div>
+            <div class="header__title">Гарантийные обязательства на доставку грузов</div>
+            <authComponent />
+        </div>
+    </header>
+    <main>
+        <div class="p-1">
+            <listGoodsComponent v-bind:arrGoods='arrGoods' />
+            <sumGoodsComponent v-bind:arrGoods='arrGoods' />
+            <xmlGoodsComponent v-bind:arrGoods='arrGoods'/>
+        </div>
+    </main>
 </template>
 
 <script>
-import sumComponent from "./components/sumComponent.vue";
+import sumGoodsComponent from "./components/sumGoodsComponent.vue";
 import listGoodsComponent from "./components/listGoodsComponent.vue";
 import xmlGoodsComponent from "./components/xmlGoodsComponent.vue";
+import authComponent from "./components/authComponent.vue";
 
 export default {
     components: {
-        'sumComponent': sumComponent,
+        'sumGoodsComponent': sumGoodsComponent,
         'listGoodsComponent': listGoodsComponent,
         'xmlGoodsComponent': xmlGoodsComponent,
+        'authComponent': authComponent,
     },
     data() {
         return {

@@ -7,12 +7,26 @@
     font-family: Calibri;
 }
 header {
-    display: grid;
     background: #333;
-    color: #fff;
-    text-align: center;
-    align-items: center;
+    padding: 2px 0;
 }
+    header>div {
+        max-width: 780px;
+        display: grid;
+        grid-template-columns: auto auto;
+        margin: 0 auto;
+        align-items: center;
+    }
+    .header__title {
+        text-align: center;
+        color: #fff;
+        font-size: 1.2em;
+    }
+    .header__button {
+        display: grid;
+        justify-content: right;
+        padding-right: 5px;
+    }
 main {
     max-width: 780px;
     padding: 10px;
@@ -55,6 +69,9 @@ main {
             grid-template-columns: 20% 80%;
             padding: 5px 0;
         }
+.form-info-text {
+    font-size: 0.8em;
+}
 
 footer {
     display: grid;
@@ -64,6 +81,3 @@ footer {
     font-size: 1.2em;
     align-items: center;
 }
-
-
-

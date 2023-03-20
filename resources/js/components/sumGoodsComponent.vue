@@ -12,7 +12,7 @@
 
 <script>
 export default {
-    name: "summComponent",
+    name: "summGoodsComponent",
     props: {
         arrGoods: Array,
     },

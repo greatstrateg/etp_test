@@ -61,7 +61,7 @@ export default {
         sendXMLDoc() {
             let s = new XMLSerializer();
             axios.post(
-                "/server",
+                "/server/xml",
                 {obj: s.serializeToString(this.docXML)}
             )
             .then((response) => {
