@@ -15,7 +15,6 @@ class xmlGoodsController extends Controller
         $list->save();
         $id_list = $list->id;
 
-
         $xml = simplexml_load_string($request->input('obj'));
         foreach($xml->goods as $el) {
             $goods = new Goods;
