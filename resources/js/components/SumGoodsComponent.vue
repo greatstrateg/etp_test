@@ -14,12 +14,12 @@
 export default {
     name: "summGoodsComponent",
     props: {
-        arrGoods: Array,
+        arr_goods: Array,
     },
     computed: {
         sumGuarant() {
             let sum = 0;
-            this.arrGoods.forEach( (el) => { sum += el[2]*1; } )
+            this.arr_goods.forEach( (el) => { sum += el[2]*1; } )
             return Math.ceil(sum).toFixed(2);
         },
         sumPay() {

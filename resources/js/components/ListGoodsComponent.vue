@@ -1,14 +1,13 @@
 <template>
     <!-- Перечень товаров -->
-    <div class="p-1"><h3>Перечень товаров</h3></div>
-    <table v-if="arrGoods.length>0" class="table_good p-1">
+    <table v-if="arr_goods.length>0" class="table_good p-1">
         <tr>
             <th>Наименование</th>
             <th>Количество</th>
             <th>Сумма гарантий (₽)</th>
             <th></th>
         </tr>
-        <tr v-for="(el, index) in arrGoods">
+        <tr v-for="(el, index) in arr_goods">
             <td>{{ el[0] }}</td>
             <td>{{ el[1] }}</td>
             <td>{{ el[2] }}</td>
@@ -59,7 +58,7 @@
 export default {
     name: "listGoodsComponent",
     props: {
-        arrGoods: Array,
+        arr_goods: Array,
     },
     data() {
         return {
@@ -77,12 +76,12 @@ export default {
     },
     methods: {
         delArrEl(index) {
-            this.arrGoods.splice(index,1);
+            this.arr_goods.splice(index,1);
         },
         editArrEl(index) {
-            this.nameGoods     = this.arrGoods[index][0];
-            this.qualityGoods  = this.arrGoods[index][1];
-            this.guarantGoods  = this.arrGoods[index][2];
+            this.nameGoods     = this.arr_goods[index][0];
+            this.qualityGoods  = this.arr_goods[index][1];
+            this.guarantGoods  = this.arr_goods[index][2];
             this.numGoods      = index;
 
             this.openCloseModal();
@@ -98,10 +97,10 @@ export default {
 
             //edit or add good
             if(this.numGoods!=-1) {
-                this.arrGoods.splice(this.numGoods, 1, [this.nameGoods, this.qualityGoods, this.guarantGoods]);
+                this.arr_goods.splice(this.numGoods, 1, [this.nameGoods, this.qualityGoods, this.guarantGoods]);
                 this.numGoods = -1;
             } else {
-                this.arrGoods.push([this.nameGoods, this.qualityGoods, this.guarantGoods]);
+                this.arr_goods.push([this.nameGoods, this.qualityGoods, this.guarantGoods]);
             }
 
             //close modal window

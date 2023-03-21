@@ -6,11 +6,24 @@
 
 import './bootstrap';
 import { createApp } from 'vue';
-import App from './App.vue';
 import axios from 'axios';
 
+import SumGoodsComponent from "./components/SumGoodsComponent.vue";
+import ListGoodsComponent from "./components/ListGoodsComponent.vue";
+import XmlGoodsComponent from "./components/XmlGoodsComponent.vue";
+import AuthComponent from "./components/AuthComponent.vue";
 
-const app = createApp(App);
+const app = createApp({
+    data() {
+        return {
+            'arr_goods': [["Шкафы", "12", "1230000"], ["Ноутбуки", "100", "9900000"], ["Смартфоны", "500", "51000000"]],
+        }
+    }
+});
+app.component('sum-goods-vue', SumGoodsComponent);
+app.component('list-goods-vue', ListGoodsComponent);
+app.component('xml-goods-vue', XmlGoodsComponent );
+app.component('auth-vue', AuthComponent);
 app.mount('#app');
 
 

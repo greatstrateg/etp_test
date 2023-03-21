@@ -1,5 +1,5 @@
 <template>
-    <div class="header__button"><div class="btn btn-primary btn-sm" v-on:click="openCloseModalAuth">Вход</div></div>
+    <div class="header__button"><div class="btn btn-primary btn-sm" v-on:click="openCloseModalAuth">Вход </div></div>
     <!-- Модальное окно -->
     <div v-if="flagModalOpen" class="modal fade show" id="addGood" style="display: block; background: black;" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog">
@@ -70,6 +70,14 @@ export default {
 
         },
         sendAuth() {
+            // validation
+            this.loginUser == '' ? this.loginClass = 'is-invalid' : this.loginClass = 'is-valid';
+            this.passUser == '' ? this.passClass = 'is-invalid' : this.passClass = 'is-valid';
+            if(this.loginClass == '' || this.passClass == '') {
+                return;
+            }
+
+            //server auth request
             axios.post(
                 "/server/auth",
                 {'name': this.loginUser, 'password': this.passUser}

@@ -6,7 +6,7 @@ use App\Models\Goods;
 use App\Models\ListGoods;
 use Illuminate\Http\Request;
 
-class xmlGoodsController extends Controller
+class XmlGoodsController extends Controller
 {
     public function saveDB(Request $request)
     {

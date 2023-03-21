@@ -1,5 +1,5 @@
 <template>
-    <div v-if="arrGoods.length" class="p-1">
+    <div v-if="arr_goods.length" class="p-1">
         <div class="btn btn-success" v-on:click="createXmlDoc">Создать xml и отправить</div>&nbsp;
         <div v-if="successFlag" class="text-success d-inline font-bold">
             <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
@@ -13,7 +13,7 @@
 export default {
     name: "xmlGoodsComponent",
     props: {
-        arrGoods: Array,
+        arr_goods: Array,
     },
     data() {
         return {
@@ -25,14 +25,14 @@ export default {
         createXmlDoc() {
             this.successFlag = false;
 
-            if( !this.arrGoods.length ) { return; }
+            if( !this.arr_goods.length ) { return; }
 
             this.docXML = document.implementation.createDocument(
                 null,
                 "root",
                 null
             );
-            this.arrGoods.forEach( (el) => {
+            this.arr_goods.forEach( (el) => {
                 let goods = this.docXML.createElement("goods");
 
                 let name = this.docXML.createElement("name");

@@ -1,19 +1,19 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="csrf-token" content="{{ csrf_token() }}">
-        <title>Laravel</title>
-        @vite(['resources/css/app.css'])
-    </head>
-    <body>
-    <div class="full">
-        <div class="content" id="app"></div>
-        <footer>
-            <div>ЕТП © {!! date("Y") !!}</div>
-        </footer>
-    </div>
-    @vite(['resources/js/app.js'])
-    </body>
-</html>
+@extends('layouts.app')
+
+@section('head_title', 'Гарантийные обязательства на доставку грузов')
+@section('header_title', 'Гарантийные обязательства на доставку грузов')
+@section('body_title', 'Перечень товаров')
+@section('header_button')
+    @auth
+        <a class="btn btn-primary btn-sm" href="{{ route('admin_panel') }}">Вход</a>
+    @endauth
+    @guest
+        <auth-vue></auth-vue>
+    @endguest
+@endsection
+@section('body_content')
+    <list-goods-vue v-bind:arr_goods="arr_goods"></list-goods-vue>
+    <sum-goods-vue v-bind:arr_goods="arr_goods"></sum-goods-vue>
+    <xml-goods-vue v-bind:arr_goods="arr_goods"></xml-goods-vue>
+@endsection
+
