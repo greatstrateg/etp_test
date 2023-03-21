@@ -26,6 +26,14 @@
         @endforeach
         </tbody>
         </table>
+        <div class="grid_sum p-1">
+            <div>Сумма гарантий: </div>
+            <div><span>{{ $sum }}</span> ₽</div>
+        </div>
+        <div class="grid_sum p-1">
+            <div>Страховой взнос 0.8%: </div>
+            <div><span>{{ $pay }}</span> ₽</div>
+        </div>
     @else
         <h4>Такого документа не существует</h4>
     @endif

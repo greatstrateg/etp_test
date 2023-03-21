@@ -26,5 +26,8 @@
         @endforeach
         </tbody>
         </table>
+        <div class="p-1">
+            {{ $links->links() }}
+        </div>
     @endif
 @endsection

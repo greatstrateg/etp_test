@@ -15,15 +15,10 @@ Route::post('/server/auth-check', [AuthController::class, 'authCheck'] );
 Route::get('/server/logout', [AuthController::class, 'authLogout'] )->name('authLogout');
 
 Route::prefix('/admin')->middleware('auth')->group(function() {
-    Route::get("/{pag?}", [ListGoodsController::class, 'index'] )->name('admin_panel');
+    Route::get("/?page={pag}", [ListGoodsController::class, 'index'] );
     Route::get("/view/{id}", [GoodsController::class, 'index'] )->name('good_card');
+    Route::get("/", [ListGoodsController::class, 'index'] )->name('admin_panel');
 });
-
-
-
-
-//temp decision
-Route::get('/test', [\App\Http\Controllers\TestController::class, 'test']);
 
 
 
