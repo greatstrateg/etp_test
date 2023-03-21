@@ -2,8 +2,8 @@
     <!-- Перечень товаров -->
     <table v-if="arr_goods.length>0" class="table_good p-1">
         <tr>
-            <th>Наименование</th>
-            <th>Количество</th>
+            <th>Товар</th>
+            <th>Кол-во</th>
             <th>Сумма гарантий (₽)</th>
             <th></th>
         </tr>
