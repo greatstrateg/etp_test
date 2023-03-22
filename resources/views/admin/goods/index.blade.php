@@ -38,4 +38,5 @@
         <h4>Такого документа не существует</h4>
     @endif
     <div class="p-1"><a class="btn btn-primary" onclick="window.history.go(-1); return false;">Назад</a></div>
+    <div></div>
 @endsection
