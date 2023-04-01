@@ -7,6 +7,8 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>@yield('head_title')</title>
     @vite(['resources/css/app.css'])
+    @vite(['resources/js/cadesplugin_api.js'])
+    @vite(['resources/js/cryptopro.js'])
 </head>
 <body>
 <div class="full" id="app">

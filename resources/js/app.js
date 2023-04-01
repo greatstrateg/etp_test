@@ -6,6 +6,7 @@
 
 import './bootstrap';
 import { createApp } from 'vue';
+import {ref, toRaw, isRef} from "vue";
 import axios from 'axios';
 
 import SumGoodsComponent from "./components/SumGoodsComponent.vue";
