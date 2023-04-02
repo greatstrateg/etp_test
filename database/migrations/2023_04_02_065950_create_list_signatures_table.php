@@ -16,8 +16,8 @@ return new class extends Migration
         Schema::create('list_signatures', function (Blueprint $table) {
             $table->id();
             $table->integer("id_list");
-            $table->string('xml_string');
-            $table->string('signature');
+            $table->text('xml_string');
+            $table->text('signature');
             $table->timestamps();
         });
     }

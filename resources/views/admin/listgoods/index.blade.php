@@ -14,6 +14,7 @@
             <th>ID листа</th>
             <th>Дата отправки</th>
             <th></th>
+            <th></th>
         </tr>
         </thead>
         <tbody>
@@ -21,7 +22,8 @@
             <tr>
             <td>{{ $el->id }}</td>
             <td>{{ $el->created_at }}</td>
-            <td><a class="btn btn-info btn-sm text-white" href="{{ route('good_card', $el->id) }}">Смотреть товары</a></td>
+            <td><a class="btn btn-info btn-sm text-white" href="{{ route('good_card', $el->id) }}">Товары</a></td>
+            <td><a class="btn btn-info btn-sm text-white" href="{{ route('sign_valid', $el->id) }}">Подпись</a></td>
             </tr>
         @endforeach
         </tbody>

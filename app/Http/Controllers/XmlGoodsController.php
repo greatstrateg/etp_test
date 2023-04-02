@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Goods;
 use App\Models\ListGoods;
+use App\Models\ListSignature;
 use Illuminate\Http\Request;
 
 class XmlGoodsController extends Controller
@@ -23,7 +24,7 @@ class XmlGoodsController extends Controller
         $xml = simplexml_load_string($request->input('xml'));
         foreach($xml->goods as $el) {
             $goods = new Goods;
-            $goods->name = $el->name;
+            $goods->name    = $el->name;
             $goods->quality = $el->quality;
             $goods->guarant = $el->guarant;
             $goods->id_list = $id_list;
@@ -36,7 +37,13 @@ class XmlGoodsController extends Controller
         $sign->signature  = $request->input('crypto');
         $sign->save();
 
+        return $id_list;
+//
 
+//
+//
+//        
+//
 
     }
 }
