@@ -17,11 +17,11 @@
         </tr>
     </table>
     <div class="p-1" v-else><h4>Товаров нет</h4></div>
-
-    <!-- Модальное окно -->
-    <div class="p-1 pt-2">
+    <div class="mt-2">
         <div class="btn btn-primary" v-on:click="openCloseModal">+ Добавить товар</div>
     </div>
+
+    <!-- Модальное окно -->
     <div v-if="flagModal" class="modal fade show" id="addGood" style="display: block; background: black;" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">

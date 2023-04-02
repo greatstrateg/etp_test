@@ -151,7 +151,7 @@ window.CryptoHelper = function() {
             const signedData = await createSignedData();
 
             signedData.propset_ContentEncoding(crypto.CADESCOM_BASE64_TO_BINARY);
-            signedData.propset_Content(toBase64 ? btoa(data) : data);
+            //signedData.propset_Content(toBase64 ? btoa(data) : data);
 
             try {
                 await signedData.VerifyCades(sign, crypto.CADESCOM_CADES_BES, true);

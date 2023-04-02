@@ -10,12 +10,17 @@ class XmlGoodsController extends Controller
 {
     public function saveDB(Request $request)
     {
+        $validated = $request->validate([
+            'xml'=>'required',
+            'crypto' => 'required',
+        ]);
+
         $list = new ListGoods;
         $list->id_user = 1; //temp decision
         $list->save();
         $id_list = $list->id;
 
-        $xml = simplexml_load_string($request->input('obj'));
+        $xml = simplexml_load_string($request->input('xml'));
         foreach($xml->goods as $el) {
             $goods = new Goods;
             $goods->name = $el->name;
@@ -24,5 +29,14 @@ class XmlGoodsController extends Controller
             $goods->id_list = $id_list;
             $goods->save();
         }
+
+        $sign = new ListSignature;
+        $sign->id_list    = $id_list;
+        $sign->xml_string = $request->input('xml');
+        $sign->signature  = $request->input('crypto');
+        $sign->save();
+
+
+
     }
 }

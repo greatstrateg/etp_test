@@ -15,4 +15,7 @@ class ListGoods extends Model
     public function good() {
         return $this->hasMany(Goods::class, "id_list");
     }
+    public function signature() {
+        return $this->hasOne(Goods::class, "id_list");
+    }
 }
