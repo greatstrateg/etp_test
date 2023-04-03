@@ -18,7 +18,7 @@
     </table>
     <div class="p-1" v-else><h4>Товаров нет</h4></div>
     <div class="mt-2">
-        <div class="btn btn-primary" v-on:click="openCloseModal">+ Добавить товар</div>
+        <div class="btn btn-primary btn-m-150" v-on:click="openCloseModal">+ Добавить товар</div>
     </div>
 
     <!-- Модальное окно -->
@@ -122,5 +122,7 @@ export default {
 </script>
 
 <style scoped>
-
+.btn-m-150 {
+    min-width: 150px;
+}
 </style>

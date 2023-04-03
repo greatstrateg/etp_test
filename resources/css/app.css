@@ -72,9 +72,9 @@ main {
             grid-template-columns: 20% 80%;
             padding: 5px 0;
         }
-.form-info-text {
-    font-size: 0.8em;
-}
+    .form-info-text {
+        font-size: 0.8em;
+    }
 
 footer {
     display: grid;

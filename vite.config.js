@@ -10,6 +10,8 @@ export default defineConfig({
                 'resources/sass/app.scss',
                 'resources/css/app.css',
                 'resources/js/app.js',
+                'resources/js/cadesplugin_api.js',
+                'resources/js/cryptopro.js',
             ],
             refresh: true,
         }),
