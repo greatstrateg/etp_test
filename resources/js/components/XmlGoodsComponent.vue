@@ -92,6 +92,7 @@ export default {
             crypto.init()
                 .then( async () => {
                    if(crypto.isReady) {
+                       this.arrCerf = [];
                        crypto.getCertificates().then((certs) => {
                            certs.forEach(el => {
                                this.arrCerf.push(el);
